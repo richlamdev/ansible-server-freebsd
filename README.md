@@ -57,10 +57,10 @@ considerations section for potential implementation options.*
 1. Checks presence of Python 3, will install Python 3, if it is not already installed.
 
 2. Deploys the following static configuration files:
-    * pf.conf
     * loader.conf.local
-    * rc.local
     * newsyslog.conf
+    * pf.conf
+    * rc.local
 
 3. Deploys the following dynamic configuration files:
     * ntp.conf
@@ -84,3 +84,5 @@ The setup.sh forces the root password of each virtual machine to be password1. (
 Additionally the vagrant user is added to the wheel group.
 
 Naturally, you will need Vagrant and VirtualBox, use and installation is information beyond the scope of this repo.
+
+5. Post deployment, consider disabling password authentication via SSH and restrict authentication to SSH key only.
