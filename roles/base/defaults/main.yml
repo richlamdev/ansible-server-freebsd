@@ -1,0 +1,5 @@
+---
+hostname: "gotham"
+ntp_server_1: "192.168.13.1"
+ntp_server_2: "192.168.13.2"
+log_server_1: "192.168.13.3"

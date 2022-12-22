@@ -1,0 +1,15 @@
+---
+- name: Gather facts
+  setup:
+
+- name: update host settings
+  template:
+    src: "{{ item }}"
+    dest: "/etc/"
+    mode: 0640
+    owner: root
+    group: wheel
+  loop:
+    - ntp.conf
+    - rc.conf
+    - syslog.conf
