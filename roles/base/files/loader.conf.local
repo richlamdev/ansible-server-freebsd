@@ -1,0 +1,5 @@
+# /boot/loader.conf.local
+aesni_load="YES"
+geom_eli_load="YES"
+geom_zero_load="YES"
+zfs_load="YES"

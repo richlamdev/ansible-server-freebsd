@@ -1,0 +1,29 @@
+--- # install python3 to enable all features of ansible
+- name: Check if Python3 is installed
+  raw: python3 --version
+  register: python_exist
+  failed_when: False
+  changed_when: False
+  #ignore_errors: True
+  #changed_when: python_exist.rc != 0
+
+#- name: Python Exist
+  #debug:
+    #msg: "{{ python_exist }}"
+  #when: "python_exist.rc != 0"
+
+- name: Ensure Python3 is installed
+  raw: 'su root -c "pkg install -y python3"'
+  when: python_exist.rc != 0
+
+#- name: Install node_exporter
+  #openbsd_pkg:
+    #name: "{{ item }}"
+    #state: present
+  #loop:
+    #- node_exporter
+
+#- name: enable node_exporter
+  #service:
+    #name: node_exporter
+    #state: restarted

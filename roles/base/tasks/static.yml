@@ -1,0 +1,21 @@
+---
+- name: deploy pf.conf / loader.conf.local / rc.local / newsyslog.conf
+  copy:
+    src: "{{ item }}"
+    dest: "/etc/"
+    mode: 0640
+    owner: root
+    group: wheel
+  loop:
+    - pf.conf
+    - loader.conf.local
+    - rc.local
+    - newsyslog.conf
+
+- name: update .profile for root user - custom ps1 prompt
+  copy:
+    src: .cshrc
+    dest: "/root/.cshrc"
+    mode: 0640
+    owner: root
+    group: wheel
