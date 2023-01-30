@@ -19,7 +19,7 @@ Ansible Server:
     - to install sshpass on Debian based Linux ```sudo apt install sshpass```
 
 Ansible Client:
-- FreeBSD (tested with v13.1)
+- FreeBSD (tested with 13.1)
 - Python3
   - the base role will check for Python 3, if it's not installed, it will proceed to install it
 - SSH server enabled
@@ -54,13 +54,13 @@ considerations section for potential implementation options.*
 
 ### Base role
 
-1. Checks presence of Python 3, will install install Python 3, if it is not already installed.
+1. Checks presence of Python 3, will install Python 3, if it is not already installed.
 
 2. Deploys the following static configuration files:
-    * pf.conf
     * loader.conf.local
-    * rc.local
     * newsyslog.conf
+    * pf.conf
+    * rc.local
 
 3. Deploys the following dynamic configuration files:
     * ntp.conf
@@ -84,3 +84,5 @@ The setup.sh forces the root password of each virtual machine to be password1. (
 Additionally the vagrant user is added to the wheel group.
 
 Naturally, you will need Vagrant and VirtualBox, use and installation is information beyond the scope of this repo.
+
+5. Post deployment, consider disabling password authentication via SSH and restrict authentication to SSH key only.

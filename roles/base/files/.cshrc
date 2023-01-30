@@ -63,7 +63,8 @@ set     end="%{\033[0m%}" # This is needed at the end... :(
 
 #set prompt="${green}%n${blue}@%m ${white}%~ ${green}%%${end} "
 #set prompt="${green}[%n${blue}@%m ${green}%~]${white}%# ${end}"
-set prompt="${green}[%n${magenta}@%m ${green}%~]${white}%# ${end}"
+#set prompt="${green}[%n${magenta}@%m ${green}%~]${white}%# ${end}"
+set prompt="${green}[%n${cyan}@%m ${green}%~]${white}%# ${end}"
 
 # Clean up after ourselves...
 unset red green yellow blue magenta cyan yellow white end
